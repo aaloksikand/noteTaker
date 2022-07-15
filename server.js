@@ -38,7 +38,7 @@ app.get(
       if (err) {
         console.error(err);
       } else {
-        const parsedNotes = JSON.parse(data);
+        res.json(data);
       }
     })
 );
