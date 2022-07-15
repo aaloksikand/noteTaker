@@ -8,6 +8,7 @@ const uuid = require('uuid');
 //db.json file on back end that will be used to store and retrieve notes using the fs module
 const notesData = require ('./db/db.json');
 
+
 const PORT = 3001;
 
 const app = express();
@@ -15,15 +16,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use(express.static());
+app.use(express.static(__dirname + '/public'));
 
 //1.  GET /notes should return the notes.html file
 app.get('/notes', (req, res) => {
-  res.sendFile('./public/notes.html')
+  res.sendFile(__dirname + '/public/notes.html');
 });
 //2.  GET * should return the index.html file
 app.get('/', (req, res) => {
-  res.sendFile('./public/index.html')
+  res.sendFile(__dirname + 'index.html')
 });
 
 
