@@ -67,5 +67,15 @@
         "title": "This is just a test",
         "text": "This is just a text",
         "note_id": "9261a512-fa8a-48fc-a93c-580baa886dea"
+    },
+    {
+        "title": "OMG i think this worked!",
+        "text": "Javier might be a boss!",
+        "note_id": "33570eb3-60bf-4429-9f9c-2d399c34acd9"
+    },
+    {
+        "title": "Just another note",
+        "text": "For the list.",
+        "note_id": "e1c2f0f8-e044-4e51-a03a-e30910ebafdb"
     }
 ]
