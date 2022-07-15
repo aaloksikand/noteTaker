@@ -38,7 +38,7 @@ app.get(
       if (err) {
         console.error(err);
       } else {
-        res.json(data);
+        res.send(response); //I don't need to use res.json because 
       }
     })
 );
