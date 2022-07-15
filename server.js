@@ -66,7 +66,7 @@ app.post("/api/notes", (req, res) => {
         //Add a new note to db.json file
         parsedNotes.push(newNote);
         fs.writeFile(
-          "/db/db.json",
+          __dirname + "/db/db.json",
           JSON.stringify(parsedNotes, null, 4),
           (writeErr) =>
             writeErr
