@@ -3,7 +3,7 @@ const path = require("path");
 //db.json file on back end that will be used to store and retrieve notes using the fs module
 const fs = require("fs");
 //helper method for generating unique ids
-const uuid = require("uuid");
+const {v4:uuid} = require("uuid"); //destructured v4 from the package and renamed it 'uuid'
 
 //db.json file on back end that will be used to store and retrieve notes using the fs module
 const notesData = require("./db/db.json");
@@ -32,7 +32,7 @@ app.get("/api/notes", (req, res) => res.json(notesData));
 
 //2.  POST /api/notes should receive a new note to save on the request body,
 //and then return the new note to the client.
-app.post("api/notes", (req, res) => {
+app.post("/api/notes", (req, res) => {
   console.log(`${req.method} request received to add a note`);
   //Destructuring assignment for the items in req.body
   const { title, text } = req.body;
