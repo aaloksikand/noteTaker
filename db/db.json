@@ -32,5 +32,15 @@
         "title": "New note",
         "text": "hello",
         "note_id": "d7ac4c13-87d2-497d-87ff-97f15bbdb7e1"
+    },
+    {
+        "title": "Lets give this a shot",
+        "text": "holla!",
+        "note_id": "108d8835-1085-4300-a56b-483d2b087971"
+    },
+    {
+        "title": "Note2",
+        "text": "Nnn",
+        "note_id": "93fc185a-be81-4e0e-bae4-2907f08caf5f"
     }
 ]

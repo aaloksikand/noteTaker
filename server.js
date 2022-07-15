@@ -57,7 +57,7 @@ app.post("/api/notes", (req, res) => {
       note_id: uuid(),
     };
     //Obtain existing notes
-    fs.readFile("./db/db.json", "utf8", (err, data) => {
+    fs.readFile(__dirname + "/db/db.json", "utf8", (err, data) => {
       if (err) {
         console.error(err);
       } else {
@@ -66,7 +66,7 @@ app.post("/api/notes", (req, res) => {
         //Add a new note to db.json file
         parsedNotes.push(newNote);
         fs.writeFile(
-          "./db/db.json",
+          "/db/db.json",
           JSON.stringify(parsedNotes, null, 4),
           (writeErr) =>
             writeErr
