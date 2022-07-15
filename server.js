@@ -31,8 +31,8 @@ app.get('/', (req, res) => {
 //CREATE API ROUTES:
 //1.  GET /api/notes should read the db.json file and return all saved notes as JSON
 app.get('/api/notes', (req,res) => res.json(notesData));
-//2.  POST /api/notes should receive a new note to save on the request body, 
 
+//2.  POST /api/notes should receive a new note to save on the request body, 
 //and then return the new note to the client.
 app.post('api/notes', (req, res) => {
 console.info(`${req.method} request received to add a note`);
