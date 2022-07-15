@@ -3,7 +3,7 @@ const path = require("path");
 //db.json file on back end that will be used to store and retrieve notes using the fs module
 const fs = require("fs");
 //helper method for generating unique ids
-const {v4:uuid} = require("uuid"); //destructured v4 from the package and renamed it 'uuid'
+const { v4: uuid } = require("uuid"); //destructured v4 from the package and renamed it 'uuid'
 
 //db.json file on back end that will be used to store and retrieve notes using the fs module
 const notesData = require("./db/db.json");
@@ -28,7 +28,20 @@ app.get("/", (req, res) => {
 
 //CREATE API ROUTES:
 //1.  GET /api/notes should read the db.json file and return all saved notes as JSON
-app.get("/api/notes", (req, res) => res.json(notesData));
+app.get(
+  "/api/notes",
+  (
+    req,
+    res //res.json(notesData));
+  ) =>
+    fs.readFile(__dirname + "/db/db.json", "utf8", (err, data) => {
+      if (err) {
+        console.error(err);
+      } else {
+        const parsedNotes = JSON.parse(data);
+      }
+    })
+);
 
 //2.  POST /api/notes should receive a new note to save on the request body,
 //and then return the new note to the client.
